@@ -1,0 +1,33 @@
+zuul:
+  ignored-services: '*'
+  sensitiveHeaders:
+  routes:
+    rbac:
+      path: /api-a/**
+      serviceId: rbac
+    oauth:
+      path: /api-o/**
+      serviceId: oauth-center
+    admin:
+      path: /admin/**
+      serviceId: admin
+    examWeb:
+      path: /web/**
+      serviceId: exam-web
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+  add-proxy-headers: true
+  ribbon:
+    eager-load:
+      enabled: true
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
