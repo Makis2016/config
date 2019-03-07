@@ -32,9 +32,9 @@ hystrix:
           thread:
             timeoutInMilliseconds: 60000
 
-security_config:
-  grant_type: password
-  client_id: system
-  client_secret: system
-  scope: app
+#security_config:
+#  grant_type: password
+#  client_id: system
+#  client_secret: system
+#  scope: app
 
